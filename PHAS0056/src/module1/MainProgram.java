@@ -1,14 +1,13 @@
 package module1;
+import java.util.Date;
 
 public class MainProgram {
 	public static void main(String[] args) {
 		
-		int ia, ic;
-		
-		ia = -4;
-		ic = ia >> 1;
-		
-		System.out.println(ic);
+		System.out.println("Program starting");
+		Date myDate = new Date();
+		System.out.println(myDate);
+		System.out.println("Program finished");
 		
 	}
 }
