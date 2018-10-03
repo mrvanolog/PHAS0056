@@ -1,5 +1,4 @@
 package module1;
-import java.util.Date;
 
 public class MainProgram {
 	public static void main(String[] args) {

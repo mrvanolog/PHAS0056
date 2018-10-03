@@ -33,12 +33,11 @@ public class AlgorithmControl {
 		
 		while (ctr_time < 5000) {
 			ctr_loop++;
-			time_now = System.currentTimeMillis();
-			ctr_time = time_now % time_init;
+			time_now = System.currentTimeMillis();  // get current time
 			if (ctr_loop % 100 == 0) {
 				System.out.println("Number of loops so far " + ctr_loop);
 			}
-			
+			ctr_time = time_now % time_init;  // find the time that has passed since start
 		}
 	}
 	
@@ -71,9 +70,10 @@ public class AlgorithmControl {
 		System.out.println("Total number of Loops for 10 000 step " + loop1);
 		System.out.println("Total number of Loops for 50 000 step " + loop2);
 		
-		/* In the second run, where the step was 50 000 loops, the total number of 
-		 * loops completed is more by ~250 000 000 loops. 
-		 */
+		System.out.println("In the second run, where the step was 50 000 loops, "
+				+ "the total number of loops completed is more by ~200 000 000 loops. "
+				+ "There is more overhead for the step of 10 000, because the computer "
+				+ "outputs information more often to the screen. So it makes ");
 	}
 
 }

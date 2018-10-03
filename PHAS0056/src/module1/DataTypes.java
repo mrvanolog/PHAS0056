@@ -7,7 +7,7 @@ public class DataTypes {
 		double doubVar = 5.0;
 		System.out.println(doubVar);
 		
-		float floatVar = 5;
+		float floatVar = 5f;
 		int intVar = 5;
 		long longVar = 5;
 		byte byteVar = 5;
@@ -25,16 +25,17 @@ public class DataTypes {
 		System.out.println(charVar);
 		
 		// Adding long to int will return an Error
-		// because you can't convert from long to int
-		//long l1 = 12345;
-		//int i1 = 12 + l1;
+		// because you can't perform narrowing from 
+		// long to int without casting
+		//long lg1 = 12345;
+		//int i1 = 12 + lg1;
 		//System.out.println(i1);
 		
 		// However, adding int to long is fine, because this
 		// is widening and is acceptable
 		int i2 = 12;
-		long l2 = i2 + 12345;
-		System.out.println(l2);
+		long lg2 = i2 + 12345;
+		System.out.println(lg2);
 		
 		// Adding int to float is also fine,
 		// int gets automatically converted into float
