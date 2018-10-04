@@ -71,9 +71,11 @@ public class AlgorithmControl {
 		System.out.println("Total number of Loops for 50 000 step " + loop2);
 		
 		System.out.println("In the second run, where the step was 50 000 loops, "
-				+ "the total number of loops completed is more by ~200 000 000 loops. "
+				+ "the total number of loops completed is more by ~200 000 000 loops.\n"
 				+ "There is more overhead for the step of 10 000, because the computer "
-				+ "outputs information more often to the screen. So it makes ");
+				+ "outputs information to the screen more often than for 50 000 step.\n"
+				+ "CPU spends more of its resources to output the values on the screen, "
+				+ "therefore, computer completes less loops for the step of 10 000.");
 	}
 
 }
