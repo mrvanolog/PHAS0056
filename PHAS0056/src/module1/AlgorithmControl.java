@@ -25,6 +25,7 @@ public class AlgorithmControl {
 		} while(i <= 4.3);
 	}
 	
+	// First version of timer method with preset run time and number of loops in a step
 	public void timer() {
 		long time_init = System.currentTimeMillis(); // get initial time
 		long time_now = 0;   // initialise instantaneous time
@@ -41,6 +42,8 @@ public class AlgorithmControl {
 		}
 	}
 	
+	// Updated version of a previous timer method with variable 
+	// run time and number of loops in a step
 	public int timer1(long maxTime, int loopSteps) {
 		long time_init = System.currentTimeMillis(); // get initial time
 		long time_now = 0;   // initialise instantaneous time
