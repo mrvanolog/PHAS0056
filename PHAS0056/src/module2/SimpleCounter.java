@@ -8,7 +8,7 @@ public class SimpleCounter {
 	// member variable
 	private int counter;
 	
-	// constructor (ignore for now)
+	// constructor 
 	public SimpleCounter(int val) { counter = val; }
 	
 	// method to set value
