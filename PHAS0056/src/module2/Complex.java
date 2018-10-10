@@ -6,8 +6,9 @@ public class Complex {
 	private double r, i;
 	
 	// member static variables
-	private static final Complex ONE = new Complex(1, 0), 
-			ZER = new Complex(0, 0), I = new Complex(0, 1);
+	public static final Complex ONE = new Complex(1, 0); 
+	public static final Complex ZERO = new Complex(0, 0);
+	public static final Complex I = new Complex(0, 1);
 	
 	// constructor
 	public Complex (double a, double b) { r = a; i = b; }
@@ -40,8 +41,15 @@ public class Complex {
 		else { return false; }	
 	}
 	
-	// returns the real and imaginary parts of CN when modulus and argument are given
-	//public Complex setFromModulusAngle(double mag, double ang) {	}
+	// returns the real and imaginary parts of CN when modulus and argument (in radians) are given
+	public Complex setFromModulusAngle(double mag, double ang) {
+		// find real part of CN 
+		double a = mag / Math.sqrt(1 + Math.tan(ang)*Math.tan(ang));
+		// find imaginary part of CN
+		double b = (mag * Math.tan(ang)) / Math.sqrt(1 + Math.tan(ang)*Math.tan(ang));
+		
+		return new Complex(a, b);		
+	}
 	
 	// method that calculates the sum of two CNs
 	public static Complex add(Complex a, Complex b) {
@@ -74,7 +82,7 @@ public class Complex {
 	
 	// output string
 	public String toString() {
-		return r + " + " + i + " i";
+		return r + " + " + i + "i";
 	}
 	
 

@@ -47,7 +47,7 @@ public class ThreeVector {
 		return sum;
 	}
 	
-	// static method that calculates angle between two vectors
+	// static method that calculates angle in radians between two vectors
 	public static double angle(ThreeVector a, ThreeVector b) {
 		// calculate cos of an angle using "a.b = |a||b|cos(a^b)" formula
 		double ang = scalarProduct(a, b) / (a.magnitude() * b.magnitude());
