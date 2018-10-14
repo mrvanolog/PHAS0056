@@ -24,7 +24,7 @@ public class Complex {
 	
 	// method that returns angle in radians on the Argand diagram 
 	// measured anticlockwise from the positive real axis
-	public double angle() { return Math.atan(i / r); }
+	public double angle() { return Math.atan2(i, r); }
 	
 	// method that returns a complex conjugate of CN
 	public Complex conjugate() { return new Complex(r, -i);	}
@@ -75,14 +75,13 @@ public class Complex {
 		a = Complex.multiply(a, cjgt);
 		b = Complex.multiply(b, cjgt);
 		
-		System.out.println(b);
-		
 		return new Complex(a.r / b.r, a.i / b.r);	
 	}
 	
 	// output string
 	public String toString() {
-		return r + " + " + i + "i";
+		if (i >= 0) { return r + "+" + i + "i"; }
+		else { return r + "-" + -i + "i"; }
 	}
 	
 
