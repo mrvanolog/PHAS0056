@@ -59,9 +59,17 @@ public class TestExceptions {
 		
 		//////Test Exceptions In FallingParticle Class//////
 		
-		// test Exceptions in constructor
+		// test Exceptions in constructor for nrgative mass
 		try {
 			new FallingParticle(-1, 2);  // set -ve mass
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		// test Exceptions in constructor for negative drag
+		try {
+			new FallingParticle(1, -2);  // set -ve mass
 		}
 		catch (Exception e) {
 			System.out.println(e);
@@ -72,7 +80,7 @@ public class TestExceptions {
 		
 		// test Exceptions in setH() method
 		try {
-			p.setH(-1);    // set -ve height
+			p.setH(-1);    // set -ve initial height
 		}
 		catch (Exception e) {
 			System.out.println(e);

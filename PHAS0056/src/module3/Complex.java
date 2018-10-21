@@ -86,7 +86,7 @@ public class Complex {
 		return new Complex(a.realPart / b.realPart, a.imagPart / b.realPart);	
 	}
 	
-	// outputs string
+	// output string
 	public String toString() {
 		if (imagPart >= 0) { return realPart + "+" + imagPart + "i"; }
 		else { return realPart + "-" + -imagPart + "i"; }

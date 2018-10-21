@@ -15,13 +15,16 @@ public class FallingParticle {
 		if (mass < 0) {
 			throw new Exception("FallingParticle(): Mass cannot be negative");
 		}
+		if (drag < 0) {
+			throw new Exception("FallingParticle(): Drag cannot be negative");
+		}
 	}
 	
 	// set the initial height
 	public void setH(double height) throws Exception {
 		h = height;
 		if (h < 0) {
-			throw new Exception("FallingParticle.setH(): Height cannot be negative");
+			throw new Exception("FallingParticle.setH(): Initial height cannot be negative");
 		}
 	}
 	

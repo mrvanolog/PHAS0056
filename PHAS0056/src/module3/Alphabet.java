@@ -41,7 +41,7 @@ public class Alphabet {
 				
 				try {
 					// create string from char (parseInt() only takes
-					// in string values as arguents)
+					// in string values as an argument)
 					String s = String.valueOf(rndChar);
 					// interpret the character as a number
 					int num = Integer.parseInt(s);
@@ -59,7 +59,7 @@ public class Alphabet {
 		// output the information after calling randomCharacter 400 times
 		System.out.println("The contents of StringBuilder: " + charString);
 		System.out.println("The number of characters StringBuilder contains: " + cntrChar);
-		System.out.println("The sum of all the numbers that have been added together: " + runTotal);
+		System.out.println("The sum of all the integers converted from characters: " + runTotal);
 		System.out.println("The number of exceptions that were thrown by the Integer.parseInt() method: " + cntrExceptions);				
 	}
 }

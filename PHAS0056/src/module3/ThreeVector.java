@@ -38,7 +38,7 @@ public class ThreeVector {
 		return dot;
 	}
 	
-	// returns the vector product of two 3 vectors
+	// returns the vector product of 2 three vectors
 	public static ThreeVector vectorProduct(ThreeVector a, ThreeVector b) {
 		// multiply and subtract components of two vectors as described by a 'cross' product formula
 		ThreeVector cross = new ThreeVector(a.y*b.z - a.z*b.y, a.z*b.x - a.x*b.z, a.x*b.y - a.y*b.x);
