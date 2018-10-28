@@ -55,6 +55,7 @@ public class WordCounter {
 		// count the number of words in a resource
 		int numWords = countWordsInResource(br);
 		
+		// output the result
 		System.out.println("Number of words in a doucument: " + numWords);	
 	}
 }
