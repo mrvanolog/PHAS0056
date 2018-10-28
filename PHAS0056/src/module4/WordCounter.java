@@ -4,6 +4,8 @@ import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
+// class that reads through the data contained in a file or URL
+// and returns the number of words in the corresponding resource
 public class WordCounter {
 	
 	// takes the name of a URL as argument and 
@@ -53,9 +55,6 @@ public class WordCounter {
 		// count the number of words in a resource
 		int numWords = countWordsInResource(br);
 		
-		System.out.println("Number of words in a doucument: " + numWords);
-		
-		
+		System.out.println("Number of words in a doucument: " + numWords);	
 	}
-
 }
