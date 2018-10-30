@@ -1,6 +1,8 @@
 package module5;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.lang.reflect.Array;
 
@@ -17,20 +19,25 @@ public class Test {
 			 System.out.println(e);
 		 }
 		 
-		 ArrayList<String> list = new ArrayList<String>();
-		 list.add("hello"); // add to end
-		 list.add("and"); // add to end
-		 list.add("welcome"); // add to end
-		 list.add(2,"another"); // add 3 at position 2
-		 list.set(3,"word");
-		 String o = list.get(1);
-		 System.out.println(o);
-		 list.remove(2);
-		 System.out.println(list);
-		 list.clear();
-		 System.out.println(list);
-		 boolean contains_and = list.contains("and");
-		 int location = list.indexOf("and");
+		 HashMap<String, GregorianCalendar> myDates = new HashMap<String, GregorianCalendar>();
+		 	// Insert using put(<KEY>,<VALUE>):
+		 	myDates.put("christmas",
+		 			new GregorianCalendar(2007,Calendar.DECEMBER,25));
+		 	myDates.put("birthday-john",
+		 			new GregorianCalendar(2006,Calendar.AUGUST,22));
+		 	myDates.put("birthday-jane",
+		 			new GregorianCalendar(2006,Calendar.AUGUST,22));
+		 	myDates.put("birthday-john",
+		 			new GregorianCalendar(2006,Calendar.AUGUST,24));
+		 	// DUPLICATE KEYS ARE NOT ALLOWED
+		 	// Therefore in this example only
+		 	// 3 items remain since the same key
+		 	// "birthday-john" was used twice:
+		 	System.out.println(myDates.size());
+		 	// The last pair to use the duplicate
+		 	// key is the only one that remains
+		 	// in the HashMap.
+		 
 	}
 
 }
