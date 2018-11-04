@@ -29,7 +29,7 @@ public class DataAnalysis {
 		while ((line = b.readLine()) != null) {
 			try{
 				DataPoint dpt = new DataPoint(line);
-				// append values to ArrayList using "getter" methodss
+				// append values to ArrayList using "getter" methods
 				data.add(dpt);
 			}
 			catch (Exception e) {
