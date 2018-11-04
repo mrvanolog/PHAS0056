@@ -36,6 +36,7 @@ public class TestSquareMatrix {
 		SquareMatrix unit = SquareMatrix.unitMatrix(2);
 		//calculate product CD
 		SquareMatrix mtrxCD = mtrxC.multiply(mtrxD);
+		System.out.println("CD:");
 		System.out.println(mtrxCD);
 		// compare two matrices and print the result
 		System.out.println("2x2 unit matrix and CD are equal: " + unit.equals(mtrxCD));

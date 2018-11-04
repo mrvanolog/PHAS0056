@@ -6,19 +6,32 @@ import java.util.Scanner;
 public class DataPoint {
 	private double x, y, ey;
 	
-	// input a line with x, y and ey
+	// input String containing values of x, y and ey
 	public DataPoint(String line) throws Exception {
+		double[] val = Parser(line);
+		
+		x = val[0];
+		y = val[1];
+		ey = val[2];
+	}
+	
+	// extracts 3 double values from a string
+	private static double[] Parser(String line) {
+		double[] val = new double[3];
+		
 		try (
-				Scanner s = new Scanner(line);
+			Scanner s = new Scanner(line);
 		){
-			// append values to corresponding ArrayLists
-			x = s.nextDouble();
-			y = s.nextDouble();
-			ey = s.nextDouble();
+			// assign values to corresponding variables
+			val[0] = s.nextDouble();
+			val[1] = s.nextDouble();
+			val[2] = s.nextDouble();
 		}
 		catch (Exception e) {
 			System.out.println("DataPoint constructor: " + e);
-		}	
+		}
+		
+		return val;
 	}
 	
 	// x ArrayList getter
