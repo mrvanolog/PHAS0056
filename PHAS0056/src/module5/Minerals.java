@@ -42,7 +42,7 @@ public class Minerals {
 				data.put(key, val);
 			}
 			catch (Exception e) {
-				System.out.println("DataAnalysis.dataFromURL(): " + e);
+				System.out.println("DataAnalysis.dataFromURL1(): " + e);
 			}
 		}
 		
@@ -70,7 +70,7 @@ public class Minerals {
 				data.put(key, val);
 			}
 			catch (Exception e) {
-				System.out.println("DataAnalysis.dataFromURL(): " + e);
+				System.out.println("DataAnalysis.dataFromURL2(): " + e);
 			}
 		}
 		

@@ -68,6 +68,7 @@ public class DataAnalysis {
 		try {
 			data = dataFromURL("http://www.hep.ucl.ac.uk/"
 										+ "undergrad/3459/data/module5/module5-xy.txt");
+			
 		}
 		catch (IOException e) {
 			System.out.println("DataAnlysis.main(): " + e);

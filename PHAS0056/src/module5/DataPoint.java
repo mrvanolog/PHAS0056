@@ -14,7 +14,7 @@ public class DataPoint {
 		y = val[1];
 		ey = val[2];
 	}
-	
+
 	// extracts 3 double values from a string
 	private static double[] Parser(String line) {
 		double[] val = new double[3];

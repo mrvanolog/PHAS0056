@@ -9,6 +9,7 @@ public class TestSquareMatrix {
 		double[][] valC = {{2,3}, {3,4}};
 		double[][] valD = {{-4,3}, {3,-2}};
 		
+		
 		// create SquareMatrix objects from double arrays
 		SquareMatrix mtrxA = new SquareMatrix(valA);
 		SquareMatrix mtrxB = new SquareMatrix(valB);

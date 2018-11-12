@@ -14,4 +14,5 @@ public class Theory {
 	public double y(double x) {
 		return Math.pow(x, n);
 	}
+
 }

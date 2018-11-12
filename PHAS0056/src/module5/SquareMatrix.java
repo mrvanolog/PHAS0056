@@ -20,6 +20,7 @@ public class SquareMatrix {
 		mtrx = elements;
 	}
 	
+	
 	// outputs matrix in a readable form
 	public String toString() {
 		for (int i = 0; i < mtrx.length; i++) {
