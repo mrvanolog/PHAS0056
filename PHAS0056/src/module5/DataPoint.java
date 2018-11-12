@@ -34,17 +34,17 @@ public class DataPoint {
 		return val;
 	}
 	
-	// x ArrayList getter
+	// x getter
 	public double getX() {
 		return this.x;
 	}
 	
-	// y ArrayList getter
+	// y getter
 	public double getY() {
 		return this.y;
 	}
 	
-	// ey ArrayList getter
+	// ey getter
 	public double getEY() {
 		return this.ey;
 	}
