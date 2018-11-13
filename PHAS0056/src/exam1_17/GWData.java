@@ -1,6 +1,7 @@
 package exam1_17;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class GWData {
 	private int year, month;
@@ -71,9 +72,17 @@ public class GWData {
 		){
 			s.next(); s.next(); s.next(); s.next();
 			// assign values to corresponding variables
-			val[0] = s.nextDouble();
+			try {
+				val[0] = s.nextDouble();
+			} catch (InputMismatchException e) {
+			    System.out.println("GWData.parserDouble(): "+e.getMessage()); //try to find out specific reason.
+			}
 			if (val [0] == -9999) { val[0] = 0;	}
-			val[1] = s.nextDouble();
+			try {
+				val[1] = s.nextDouble();
+			} catch (InputMismatchException e) {
+			    System.out.println("GWData.parserDouble(): "+e.getMessage()); //try to find out specific reason.
+			}
 			if (val [1] == -9999) { val[1] = 0;	}
 		}
 		catch (Exception e) {
