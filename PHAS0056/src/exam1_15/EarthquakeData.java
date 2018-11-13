@@ -122,5 +122,4 @@ public class EarthquakeData {
 	public double getID() {
 		return this.id;
 	}
-
 }
