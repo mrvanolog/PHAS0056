@@ -33,7 +33,7 @@ public class NFLData {
 		}
 	}
 	
-	// outputs data as a String
+	// output data as a String
 	public String toString() {
 		return name+", Team: "+team+", Position: "+pos+", Games: "+games+"\nRushing Attempts: "+att+
 				", Rushing Yards: "+ruYds+", Rushing TD: "+ruTD+", Was a Target: "+tgt+
