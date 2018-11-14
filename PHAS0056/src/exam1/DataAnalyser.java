@@ -47,21 +47,55 @@ public class DataAnalyser {
 	public void analyse(ArrayList<NFLData> data) {
 		// initialise running maximum variables
 		int ruYdsMax = -Integer.MAX_VALUE, apYdsMax = -Integer.MAX_VALUE;
-		int ruYdsID, apYdsID;    // initialise index storing variables
+		int ruYdsID = 0, apYdsID = 0;    // initialise index storing variables
 		int apYds;               // initialise running All Purpose Yards
 		
+		// run through all the players
 		for (int i = 0; i < playerTot; i++) {
+			// look for the most Rushing Yards 
 			if (data.get(i).ruYds > ruYdsMax) {
 				ruYdsMax = data.get(i).ruYds;
 				ruYdsID = i;
 			}
 			
+			// look for the most All Purpose Yards
 			apYds = data.get(i).ruYds + data.get(i).reYds;
 			if (apYds > apYdsMax) {
 				apYdsMax = apYds;
 				apYdsID = i;
 			}
 		}
+		// print the results
+		System.out.println("\nPlayer with the most Rushing Yards:\n"+data.get(ruYdsID));
+		System.out.println("\nPlayer with the most All Purpose Yards:\n"+data.get(apYdsID));
+	}
+	
+	// creates an ArrayList of all team names
+	public ArrayList<String> getTeams(ArrayList<NFLData> data) {
+		// initialise ArrayList
+		ArrayList<String> teams = new ArrayList<String>();
+
+		// run through all the players
+		for (int i = 0; i < playerTot; i++) {
+			// check if this team name is in the least already
+			boolean check = true;
+			for (String name : teams) {
+				if (name.equals(data.get(i).team)) {
+					check = false;
+				}
+			}
+
+			// if there is no such team name already - add it to the list
+			if (check) {
+				teams.add(data.get(i).team);
+			}
+		}
+
+		return teams;
+	}
+	
+	public analyseTeam(ArrayList<NFLData> data, ArrayList<String> teams) {
+				
 	}
 	
 	// getter for the total number of players

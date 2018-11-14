@@ -18,9 +18,13 @@ public class MidTermExam {
 		// creare an array of NFLData objects
 		ArrayList<NFLData> data = da.dataFromURL(br);
 		
+		// print the total number of players
 		System.out.println("The total number of players recorded in a file: "+da.getTot());
 		
+		// print the players with the most Rushing Yards and All Purpose Yards
+		da.analyse(data);
 		
+		System.out.println(da.getTeams(data));
 
 	}
 
