@@ -73,5 +73,4 @@ public class TestDataPoints {
 			System.out.println(dtp);
 		}
 	}
-
 }
