@@ -56,8 +56,6 @@ public class TestDataPoints {
 	}
 
 	public static void main(String[] args) {
-		//TestDataPoints tdp = new TestDataPoints();
-		
 		ArrayList<DataPoint> data = new ArrayList<DataPoint>();
 		
 		// create an ArrayList of DataPoints
