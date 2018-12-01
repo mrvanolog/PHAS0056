@@ -23,18 +23,18 @@ public class TestDataPoints {
 		
 		// initialise ArrayList object
 		ArrayList<DataPoint> data = new ArrayList<DataPoint>(); 
+		double x, y, ey;
 		String line = "";
 		
 		// read each line one by one and add Data Points to ArrayList
 		while ((line = b.readLine()) != null) {
 			try{
-				System.out.println(line);
 				Scanner s = new Scanner(line);
-				
+
 				// get three double values
-				double x = s.nextDouble();
-				double y = s.nextDouble();
-				double ey = s.nextDouble();
+				x = Double.parseDouble(s.next());
+				y = Double.parseDouble(s.next());
+				ey = Double.parseDouble(s.next());
 				
 				// check if data has label and create 
 				// corresponding data point object
@@ -45,7 +45,8 @@ public class TestDataPoints {
 				else {
 					// append values to ArrayList
 					data.add(new DataPoint(x, y, ey));
-				}			
+				}	
+				s.close();
 			}
 			catch (Exception e) {
 				System.out.println("TestDataPoints.dataFromURL(): " + e);
