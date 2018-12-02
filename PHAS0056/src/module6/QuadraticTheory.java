@@ -1,5 +1,6 @@
 package module6;
 
+//returns a value of a quadratic equation
 public class QuadraticTheory implements Theory{
 	private double a, b, c;
 	// input a, b and c parameters of a quadratic

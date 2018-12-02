@@ -66,7 +66,7 @@ public class TestDataPoints {
 		catch (IOException e) {
 			System.out.println("TestDataPoints.main(): " + e);
 		}
-		
+		// output all data points from an array
 		for (DataPoint dtp : data) {
 			System.out.println(dtp);
 		}

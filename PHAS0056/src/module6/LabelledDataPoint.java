@@ -11,7 +11,7 @@ public class LabelledDataPoint extends DataPoint {
 		
 		this.label = label;
 	}
-	
+	// returns a string 
 	public String toString() {
 		return label+": "+"x = "+x+", y = "+y+" +/- "+ey;
 	}
