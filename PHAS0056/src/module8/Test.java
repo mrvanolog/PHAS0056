@@ -22,13 +22,39 @@ public class Test {
 		}
 	}
 	
+	public class NumberSeries implements Runnable {
+		private int start;
+		private int step;
+		public NumberSeries(int start, int step) {
+			this.start = start;
+			this.step = step;
+		}
+		public void run() {
+			int i = start;
+			while (true) { // run until interrupted
+				if (Thread.currentThread().isInterrupted()) return;
+				System.out.println(i);
+				i += step;
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		Test t = new Test();
 		
-		Thread odds = new Thread(t.new NumberSeriesTask(1,10,2));
-		Thread evens = new Thread(t.new NumberSeriesTask(2,10,2));
+		Thread odds = new Thread(t.new NumberSeries(1,2));
+		Thread evens = new Thread(t.new NumberSeries(2,2));
 		odds.start();
 		evens.start();
+		try {
+			Thread.sleep(5000); // main thread pauses for 5 seconds
+			// while other threads run
+		}
+		catch (InterruptedException e) {
+			// stop early if main thread is interrupted
+		}
+		odds.interrupt();
+		evens.interrupt();
 	}
 
 }
