@@ -3,6 +3,12 @@ package module8;
 import java.util.concurrent.*;
 import java.util.*;
 
+/** A class that compares the performance of a single
+ * 	thread run time to the run time of 4 simultaneous threads.
+ *  @author Ivan Popov
+ *  @version 1.0
+ *
+ */
 public class ThreadsTimer {
 
 	public static void main(String[] args) {

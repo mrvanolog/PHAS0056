@@ -1,6 +1,10 @@
 package module8;
 
-// performs countdown and prime number calculation 
+/** A class that performs countdown and prime number calculation 
+ *  @author Ivan
+ *  @version 1.0
+ *
+ */
 public class ThreadsMain {
 
 	public static void main(String[] args) {

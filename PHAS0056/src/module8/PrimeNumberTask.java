@@ -2,13 +2,20 @@ package module8;
 
 import java.util.ArrayList;
 
-// creates an array of prime numbers
+/** A class that creates an array of prime numbers.
+ *  @author Ivan
+ *  @version 1.0
+ *
+ */
 public class PrimeNumberTask implements Runnable {
 	private ArrayList<Integer> primeList = new ArrayList<Integer>();
 	
 	public PrimeNumberTask() {};
 	
-	// checks if a number is prime or not.
+	/** Checks if a number is prime or not.
+	 * 	@param n integer number
+	 *  @return true if prime, false otherwise 
+	 */
 	private boolean isPrime(int n) {
 	    // check if n is a multiple of 2
 	    if (n%2 == 0) return false;
@@ -19,7 +26,8 @@ public class PrimeNumberTask implements Runnable {
 	    }
 	    return true;
 	}
-	// checks if a number is prime and adds prime numbers to array
+	/** Checks if a number is prime and adds prime numbers to array.
+	 */
 	public void run() {
 		int i = 1;
 		while(true) {
