@@ -3,6 +3,7 @@ package module8;
 import java.util.concurrent.*;
 import java.util.Random;
 
+// performs Monte Carlo calculation
 public class MonteCarloPiCalculatorTask implements Callable<Double> {
 	private final long n_points;
 	// input the number of points for which Monte Carlo

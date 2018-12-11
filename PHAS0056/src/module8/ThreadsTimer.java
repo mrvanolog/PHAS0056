@@ -1,5 +1,8 @@
 package module8;
 
+import java.util.concurrent.*;
+import java.util.*;
+
 public class ThreadsTimer {
 
 	public static void main(String[] args) {
@@ -14,22 +17,33 @@ public class ThreadsTimer {
 		System.out.println(pi);
 		System.out.println("Time taken for a single thread: "+timeSingleThread/1000+" s");
 		
-		// calculating pi estimate in 4 threads
-		long n1 = 2500000L;
-		MonteCarloPiCalculatorTask task1 = new
-				MonteCarloPiCalculatorTask(n1);
-		// calculate the time it takes for 4 threads to execute
+		int nThreads = 4;
+		ExecutorService threadPool = Executors.newFixedThreadPool(nThreads);
+		List<Future<Double>> futures = new ArrayList<Future<Double>>();
 		timeInit = System.currentTimeMillis();
-		double pi1 = task1.call();
-		double pi2 = task1.call();
-		double pi3 = task1.call();
-		double pi4 = task1.call();
+		for (int iThread = 0; iThread < nThreads; ++iThread) {
+			MonteCarloPiCalculatorTask task1 = new
+					MonteCarloPiCalculatorTask(nPoints/nThreads);
+			Future<Double> future = threadPool.submit(task1);
+			futures.add(future);
+		}
+		double sum = 0.0;
+		for (int iThread = 0; iThread < nThreads; ++iThread) {
+			try {
+				double result = futures.get(iThread).get();
+				sum += result;
+			}
+			catch (InterruptedException e) { }
+			catch (ExecutionException e) { }
+		}
+		threadPool.shutdown();
 		double timeFourThreads = System.currentTimeMillis() - timeInit;
+		double pi1 = sum/nThreads;
 		
-		System.out.println((pi1+pi2+pi3+pi4)/4);
+		System.out.println(pi1);
 		System.out.println("Time taken for four threads: "+timeFourThreads/1000+" s");
 		
-		System.out.println("\nIn general it takes less time for four threads to perform the task than it takes the single thread."
+		System.out.println("\nIt takes less time for four threads to perform the task than it takes the single thread."
 				+ "\nThis is because 4 threads do those calculations simultaneously where possible and a single thread"
 				+ "\nis performing the calculations one at a time.");
 	}

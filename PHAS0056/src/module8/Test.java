@@ -40,21 +40,7 @@ public class Test {
 	}
 	
 	public static void main(String[] args) {
-		Test t = new Test();
-		
-		Thread odds = new Thread(t.new NumberSeries(1,2));
-		Thread evens = new Thread(t.new NumberSeries(2,2));
-		odds.start();
-		evens.start();
-		try {
-			Thread.sleep(5000); // main thread pauses for 5 seconds
-			// while other threads run
-		}
-		catch (InterruptedException e) {
-			// stop early if main thread is interrupted
-		}
-		odds.interrupt();
-		evens.interrupt();
+		System.out.println(1/2);
 	}
 
 }

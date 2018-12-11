@@ -1,5 +1,6 @@
 package module8;
 
+// performs countdown and prime number calculation 
 public class ThreadsMain {
 
 	public static void main(String[] args) {

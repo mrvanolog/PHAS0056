@@ -13,7 +13,7 @@ public class PrimeNumberTask implements Runnable {
 	    // check if n is a multiple of 2
 	    if (n%2 == 0) return false;
 	    // if not check all of the odd numbers
-	    for(int j=3; j < n; j+=2) {
+	    for(int j=3; j < Math.sqrt(n)+1; j+=2) {
 	        if(n%j == 0)
 	            return false;
 	    }
@@ -26,7 +26,7 @@ public class PrimeNumberTask implements Runnable {
 			// check if program was interrupted
 			if (Thread.currentThread().isInterrupted()) {
 				int size = primeList.size();
-				System.out.println("The largest chexked integer so far: "+i);
+				System.out.println("The largest checked integer so far: "+i);
 				System.out.println("The largest prime number found: "+primeList.get(size-1));
 				System.out.println("The total number of prime numbers found: "+size);
 				

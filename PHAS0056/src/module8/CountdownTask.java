@@ -1,6 +1,6 @@
 package module8;
 
-// performs a countdown for a given number of seconds
+// performs a count down for a given number of seconds
 public class CountdownTask implements Runnable {
 	private int sec;
 	
