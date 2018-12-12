@@ -9,7 +9,7 @@ public class MidTermExam {
 		DataParser dp = new DataParser();
 		
 		// create an array of GWData objects
-		BufferedReader br = dp.brFromFile("C:\\Users\\Ivan\\Documents\\Java\\git\\PHAS0056\\PHAS0056\\src\\exam1_17\\N_extent_v3.0.csv");
+		BufferedReader br = dp.brFromFile("N:\\Eclipse\\git\\PHAS0056\\src\\exam1_17\\N_extent_v3.0.csv");
 		ArrayList<GWData> data = dp.dataFromFile(br);
 		
 		// output the information
