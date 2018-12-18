@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
- * Panel with start, stop and exit buttons for rotating square
+ * Panel with start, stop and exit buttons for Solar System
    animation.
  */
 public class SolarSystemGuiPanel extends JPanel
@@ -18,7 +18,7 @@ public class SolarSystemGuiPanel extends JPanel
 	/** Create JPanel containing animation panel and buttons. */
 	public SolarSystemGuiPanel() {
 		super();
-		setPreferredSize(new Dimension(250,300));
+		setPreferredSize(new Dimension(800,800));
 		setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
 		animPanel = new SolarSystemPanel(200,200);
 		startButton = new JButton("Start");
@@ -43,7 +43,7 @@ public class SolarSystemGuiPanel extends JPanel
 		else if (e.getSource()==exitButton) System.exit(0);
 	}
 	/** Start animation */
-	public void start() {animPanel.start();}
+	public void start() { animPanel.start();}
 	/** Stop animation */
-	public void stop() {animPanel.stop();}
+	public void stop() { animPanel.stop();}
 }

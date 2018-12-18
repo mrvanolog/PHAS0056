@@ -8,15 +8,14 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 /**
- * JPanel containing a rotating square
- * that can be stopped and started.
+ * JPanel containing Solar System
+ *  with planets orbiting the Sun 
+ *  that can be stopped and started.
  */
 public class SolarSystemPanel extends JPanel implements ActionListener {
 	private ArrayList<Planet> planets = new ArrayList<Planet>();
 	private Timer animationTimer; // timer controlling frame rate
-	private final int delay = 50; // delay in ms between steps
-	//private final double delta; // angle to rotate in each step
-	private double angle = 0.0; // current angle of shape on screen
+	private final int delay = 10; // delay in ms between steps
 	private int radSun = 60; // radius of the Sun 
 	private int massSun = 333000; // mass of the Sun
 		
@@ -29,12 +28,12 @@ public class SolarSystemPanel extends JPanel implements ActionListener {
 	SolarSystemPanel(int width, int height) {
 		setPreferredSize(new Dimension(width,height));
 		// create an array of planets
-		planets.add(new Planet("Mercury", 1, 12, 100));
+		planets.add(new Planet("Earth", 20, 1, 310, 0.0167, 365));
 		animationTimer = new Timer(delay, this);
 		animationTimer.start();
 	}
 	
-	/** Paint shape at appropriate angle. */
+	/** Paint planets at appropriate positions. */
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		int height = getHeight();
@@ -49,24 +48,20 @@ public class SolarSystemPanel extends JPanel implements ActionListener {
 		g.fillOval(-radSun/2, -radSun/2, radSun, radSun);
 		// Redraw Mercury
 		int cor = planets.get(0).getRad()/2;  // planet's correction factor
-		g.setColor(Color.RED);
+		g.setColor(Color.BLUE);
 		g.fillOval(planets.get(0).getX()-cor,planets.get(0).getY()-cor,
 							planets.get(0).getRad(), planets.get(0).getRad());
 	}
-	
-	private Planet rotatePlanet(Planet planet) {
-		
-		
-	}
 
 	public void actionPerformed(ActionEvent event) {
+		planets.get(0).redrawPlanet(1);
 		repaint();
 	}
 	
 	/** Start the animation */
-	public void start() {animationTimer.start();}
+	public void start() { animationTimer.start();}
 	
 	/** Stop the animation */
-	public void stop() {animationTimer.stop();}
+	public void stop() { animationTimer.stop();}
 
 }

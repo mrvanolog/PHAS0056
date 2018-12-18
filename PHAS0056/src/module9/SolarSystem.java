@@ -9,7 +9,7 @@ public class SolarSystem {
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				JFrame frame = new JFrame("Animation demo");
+				JFrame frame = new JFrame("Solar Sytem Model");
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setSize(800,800);
 				JPanel panel = new SolarSystemGuiPanel();
