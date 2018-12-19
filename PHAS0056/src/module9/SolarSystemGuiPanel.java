@@ -15,12 +15,13 @@ public class SolarSystemGuiPanel extends JPanel
 	private JButton startButton;
 	private JButton stopButton;
 	private JButton exitButton;
+	
 	/** Create JPanel containing animation panel and buttons. */
 	public SolarSystemGuiPanel() {
 		super();
 		setPreferredSize(new Dimension(800,800));
 		setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
-		animPanel = new SolarSystemPanel(200,200);
+		animPanel = new SolarSystemPanel(800,800);
 		startButton = new JButton("Start");
 		stopButton = new JButton("Stop");
 		exitButton = new JButton("Exit");

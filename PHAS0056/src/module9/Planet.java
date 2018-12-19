@@ -1,49 +1,58 @@
 package module9;
 
+import java.awt.Color;
+
 /**
  * A class that defines physical properties of a planet
+ * and methods to recalculate its position
+ * 
  * @author Ivan Popov
- *
  */
 public class Planet {
 	private String name;
+	private Color color;
 	private int x, y, radius;
-	private double mass, a, b, r, e, theta, period;
+	private double a, b, r, e, theta, period;
 	/**
-	 * Input the parameters of a planet
-	 * @param name name of a planet 
+	 * Input the parameters of the planet
+	 * @param name name of the planet 
+	 * @param color colour of the planet (class Color)
 	 * @param radius radius of the planet (arb. units)
-	 * @param mass mass of a planet (masses of the Earth)
-	 * @param a semi-major orbit of the planet (10^8 km)
-	 * @param b semi-minor orbit of the planet (10^8 km)
+	 * @param a semi-major orbit of the planet (A.U.)
 	 * @param e eccentricity of the planet's orbit
-	 * @param r current radius of the planet (10^8 km)
 	 * @param period planet's year (Earth days)
 	 */
-	public Planet(String name, int radius, double mass, 
+	public Planet(String name, Color color, int radius, 
 						double a, double e, double period) {	
 		this.name = name;
+		this.color = color;
 		this.radius = radius;
-		this.mass = mass;
-		this.a = a;
+		this.a = a*250; // A.U. multiplied by 250 pixels
 		this.e = e;
-		this.b = a*Math.sqrt(1-e*e);
-		this.r = a;
-		this.theta = 0;
+		this.b = this.a*Math.sqrt(1-e*e); // semi-minor orbit of the planet
+		this.r = this.a; // current distance of the planet from the Sun
+		this.theta = 0; // angle from the starting horizontal
 		this.period = period;
-		this.x = (int) a;  // current x co-ord of the planet
+		this.x = (int) this.a;  // current x co-ord of the planet
 		this.y = 0;  // current y co-ord of the planet
 	}
 	/** Recalculates the position of the planet
-	 *  @param dT time increment
+	 *  @param dT time increment days
 	 */
 	public void redrawPlanet(int dT) {
 		// calculate the change in the angle
 		// with the time increment
 		double n = 2 * Math.PI / period;
 		double dTheta = a*b*n*dT / (r*r);
-		// recalculate the radius of the planet
-		theta += dTheta;
+		// update the angle
+		if(theta < 2*Math.PI) {
+			theta += dTheta;
+		}
+		else {
+			theta -= 2*Math.PI;
+			theta += dTheta;
+		}
+		// recalculate the radius and co-ords of the planet
 		this.r = a*(1-e*e) / (1+e*Math.cos(theta));
 		this.x = (int) (r * Math.cos(theta));
 		this.y = (int) (r * Math.sin(theta));
@@ -53,13 +62,13 @@ public class Planet {
 	public String getName() {
 		return this.name;
 	}
+	/** Returns the mass of the planet */ 
+	public Color getColor() {
+		return this.color;
+	}
 	/** Returns the radius of the planet */ 
 	public int getRad() {
 		return this.radius;
-	}
-	/** Returns the mass of the planet */ 
-	public double getMass() {
-		return this.mass;
 	}
 	/** Returns the semi-major orbit of the planet */
 	public double getA() {
