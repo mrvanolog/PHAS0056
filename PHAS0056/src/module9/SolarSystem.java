@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-/** Dynamic model of the Solar System */
+/** Dynamic model of the Solar System. */
 public class SolarSystem {
 	/** Create and display JFrame containing animation GUI panel */
 	public static void main(String[] args) {

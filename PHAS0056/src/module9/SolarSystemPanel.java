@@ -32,6 +32,7 @@ public class SolarSystemPanel extends JPanel implements ActionListener {
 		planets.add(new Planet("Venus", Color.MAGENTA, 23, 0.723, 0.0068, 225));
 		planets.add(new Planet("Earth", Color.BLUE, 25, 1, 0.0167, 365));
 		planets.add(new Planet("Mars", Color.RED, 16, 1.524, 0.0934, 687));
+		planets.add(new Planet("Comet", Color.PINK, 6, 2.1, 0.87, 800));
 		animationTimer = new Timer(delay, this);
 		animationTimer.start();
 	}
@@ -46,7 +47,7 @@ public class SolarSystemPanel extends JPanel implements ActionListener {
 		g.fillRect(0, 0, width, height);
 		// Display timer information
 		g.setColor(Color.WHITE);
-		g.drawString("Time elapsed from start - "+time+" days.", 1, 12);
+		g.drawString("Time elapsed from start - "+time+" Earth days.", 1, 12);
 		// Now move origin to centre of panel
 		g.translate(width/2, height/2);
 		// Draw the Sun

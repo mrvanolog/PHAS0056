@@ -37,7 +37,7 @@ public class SolarSystemGuiPanel extends JPanel
 		add(animPanel);
 		add(buttonPanel);
 	}
-	/** Respond to button clicks */
+	/** Respond to button clicks. */
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==startButton) start();
 		else if (e.getSource()==stopButton) stop();

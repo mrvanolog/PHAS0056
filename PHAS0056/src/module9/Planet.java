@@ -4,9 +4,10 @@ import java.awt.Color;
 
 /**
  * A class that defines physical properties of a planet
- * and methods to recalculate its position
+ * and methods to recalculate its position.
  * 
  * @author Ivan Popov
+ * @version 6.66
  */
 public class Planet {
 	private String name;
@@ -27,7 +28,7 @@ public class Planet {
 		this.name = name;
 		this.color = color;
 		this.radius = radius;
-		this.a = a*250; // A.U. multiplied by 250 pixels
+		this.a = a*200; // A.U. multiplied by 250 pixels
 		this.e = e;
 		this.b = this.a*Math.sqrt(1-e*e); // semi-minor orbit of the planet
 		this.r = this.a; // current distance of the planet from the Sun
