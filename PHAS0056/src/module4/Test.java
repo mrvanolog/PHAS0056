@@ -15,6 +15,7 @@ public class Test {
 		while ((line=br.readLine()) != null) {
 			System.out.println(line);
 		}
+		br.close();
 	}
 
 	public static void main(String[] args) {

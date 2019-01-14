@@ -2,10 +2,7 @@ package module5;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.lang.reflect.Array;
+java.lang.reflect.Array;
 
 public class Test {
 
