@@ -11,7 +11,6 @@ public class Volunteer {
 	protected String name;    // name of the species 
 	
 	/**
-	 * 
 	 * @param line string containing info about
 	 * image classification by a volunteer
 	 */

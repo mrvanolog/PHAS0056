@@ -7,12 +7,16 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
 
+/**
+ * Reads data about images and stores them in appropriate data structures
+ * prints the total number of images, number of images classified by
+ * at least one volunteer and prints details of images that has been
+ * classified by at least 10 volunteers.
+ *
+ */
 public class ExamPart1 {
-	// an array of images
-	protected static ArrayList<Image> images = new ArrayList<Image>();
-	
-	/** creates BufferedReader object from a URL
-	 * 
+	/** 
+	 * Creates BufferedReader object from a URL
 	 * @param url string containing a url
 	 * @return BufferedReader object
 	 * @throws IOException
@@ -25,8 +29,16 @@ public class ExamPart1 {
 		
 		return new BufferedReader(isr);
 	}
-
-	public static void main(String[] args) throws IOException {
+	
+	/**
+	 * Creates an array of Image objects from 3 web files provided 
+	 * for final exam: locations.txt, classification.txt and expert.txt
+	 * @return array of Image objects
+	 * @throws IOException
+	 */
+	public static ArrayList<Image> createArray() throws IOException {
+		ArrayList<Image> images = new ArrayList<Image>();
+		
 		// create BufferedReader with info about location and expert's classification
 		BufferedReader br1 = brFromURL("http://www.hep.ucl.ac.uk/undergrad/"
 				+ "0056/exam-data/2018-19/locations.txt");
@@ -59,6 +71,13 @@ public class ExamPart1 {
 			}
 		}
 		
+		return images;
+	}
+
+	public static void main(String[] args) throws IOException {		
+		// create an array of Image objects
+		ArrayList<Image> images =createArray();
+		
 		// output and calculate the information
 		System.out.println("The total number of images: "+images.size());
 		
@@ -73,6 +92,8 @@ public class ExamPart1 {
 		System.out.println();
 		System.out.println("/////Details of each image that has been classified by at least 10 volunteers\\\\\\\\\\");
 		System.out.println();
+		// go through each image and output info about each 
+		// each image that has been classified by at least 10 volunteers
 		for(Image img : images) {
 			if(img.namesVol.size() > 9) {
 				System.out.println(img);

@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 /**
  * Stores the full information about the image
- *
  */
 public class Image {
 	protected int id;          // id of an image
@@ -22,21 +21,25 @@ public class Image {
 	 * image classification by an expert
 	 */
 	public Image(String line1, String line2) {
-		Scanner s1 = new Scanner(line1);
-		Scanner s2 = new Scanner(line2);
+		Scanner s = new Scanner(line1);
 		
-		this.id = s1.nextInt();
-		this.lat = Double.parseDouble(s1.next());
-		this.lon = Double.parseDouble(s1.next());
+		this.id = s.nextInt();
+		this.lat = Double.parseDouble(s.next());
+		this.lon = Double.parseDouble(s.next());
 		
-		s2.next();
-		s2.next();
-		this.nameExp = s2.next();
+		s.close();
+		s = new Scanner(line2);
 		
-		s1.close();
-		s2.close();
+		s.next();
+		s.next();
+		this.nameExp = s.next();
+		
+		s.close();
 	}
 	
+	/**
+	 * Outputs Image information in a string format
+	 */
 	public String toString() {
 		return "id: "+id+"\n"+"Latitude: "+lat+", Longitude: "+lon+"\n"
 						+"Species identified by an expert: "+nameExp+"\n"
